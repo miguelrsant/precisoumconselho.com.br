@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conselho do Dia - Laura</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #2a2a2a;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #ffcc70;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #ffcc70;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #e6b85f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conselho do dia para Laura</h1>
+    <p id="frase"></p>
+    <button onclick="trocarFrase()">Próximo</button>
+  </div>
+
+  <script>
+    const frases = [
+      "Conselho do dia: dormir na aula não é bom... mas sonhar comigo pode ser 😏.",
+      "Conselho do dia: se for pra fechar os olhos, que seja pra imaginar a gente junto.",
+      "Conselho do dia: até o descanso fica melhor quando você aparece nos meus pensamentos.",
+      "Conselho do dia: finge que tá dormindo, mas escuta... gosto muito de você.",
+      "Conselho do dia: cuidado... quem dorme demais acaba aparecendo nos sonhos dos outros."
+    ];
+
+    let index = 0;
+    const fraseEl = document.getElementById("frase");
+    fraseEl.innerText = frases[index];
+
+    function trocarFrase() {
+      index = (index + 1) % frases.length;
+      fraseEl.innerText = frases[index];
+    }
+  </script>
+</body>
+</html>
