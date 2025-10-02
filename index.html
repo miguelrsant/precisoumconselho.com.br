@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conselho do Dia - Laura</title>
-  <style>
-    body {
-      background-color: #1c1c1c;
-      color: #f1f1f1;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      background: #2a2a2a;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      max-width: 400px;
-    }
-
-    h1 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #ffcc70;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background: #ffcc70;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #e6b85f;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Conselho do dia para Laura</h1>
-    <p id="frase"></p>
-    <button onclick="trocarFrase()">Próximo</button>
-  </div>
-
-  <script>
-    const frases = [
-      "Conselho do dia: dormir na aula não é bom... mas sonhar comigo pode ser 😏.",
-      "Conselho do dia: se for pra fechar os olhos, que seja pra imaginar a gente junto.",
-      "Conselho do dia: até o descanso fica melhor quando você aparece nos meus pensamentos.",
-      "Conselho do dia: finge que tá dormindo, mas escuta... gosto muito de você.",
-      "Conselho do dia: cuidado... quem dorme demais acaba aparecendo nos sonhos dos outros."
-    ];
-
-    let index = 0;
-    const fraseEl = document.getElementById("frase");
-    fraseEl.innerText = frases[index];
-
-    function trocarFrase() {
-      index = (index + 1) % frases.length;
-      fraseEl.innerText = frases[index];
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conselho Filosófico</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to bottom, #1a1a2e, #162447, #1f4068);
+        color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+      blockquote {
+        font-size: 1.5rem;
+        font-style: italic;
+        margin: 20px 0;
+        quotes: "\201C""\201D";
+      }
+      blockquote:before {
+        content: open-quote;
+      }
+      blockquote:after {
+        content: close-quote;
+      }
+      .footer {
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #e94560;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #d12c49;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Conselho Filosófico</h1>
+      <p>
+        Um lembrete para pausar, refletir e agir mesmo diante de portas fechadas
+        e opiniões alheias:
+      </p>
+      <blockquote>
+        As portas que se fecham não limitam quem já decidiu caminhar; a
+        verdadeira liberdade nasce quando o barulho das opiniões perde força
+        diante da confiança em si mesmo.
+      </blockquote>
+      <button
+        onclick="navigator.clipboard.writeText('As portas que se fecham não limitam quem já decidiu caminhar; a verdadeira liberdade nasce quando o barulho das opiniões perde força diante da confiança em si mesmo.')"
+      >
+        Copiar frase
+      </button>
+      <div class="footer">
+        Feito para um momento de reflexão — volte sempre que precisar.
+      </div>
+    </div>
+  </body>
 </html>
